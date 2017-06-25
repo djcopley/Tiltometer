@@ -16,24 +16,26 @@ from gi.repository import Gtk, Gdk, GLib
 # MPU static values
 sensor = mpu6050(0x68)
 alpha = 0.5
-start_pitch = None
-start_roll = None
+start_pitch = 0
+start_roll = 0
 
 
-def calc_pitch_roll(fXg, fYg, fZg):
+def calc_pitch_roll(fx, fy, fz):
 
     """ Calculates pitch and roll """
 
-    pitch = (math.atan2(fXg, math.sqrt(fYg*fYg + fZg*fZg)) * 180.0) / math.pi
-    roll = (math.atan2(-fYg, fZg) * 180.0) / math.pi
+    pitch = (math.atan2(fx, math.sqrt(fy * fy + fz * fz)) * 180.0) / math.pi
+    roll = (math.atan2(-fy, fz) * 180.0) / math.pi
     
     return pitch, roll
 
 
 def level_gyro():
+
+    """ Set base values for gyroscope so change can be calculated """
+
     global start_pitch, start_roll
-    accel = sensor.get_accel_data()
-    start_pitch, start_roll = get_gyro_pos(start_val = True)
+    start_pitch, start_roll = get_gyro_pos(start_val=True)
 
 
 def get_gyro_pos(**kwargs):
@@ -46,23 +48,22 @@ def get_gyro_pos(**kwargs):
     ay = accel['y']
     az = accel['z']
 
-    fXg = ax * alpha
-    fXg = fXg + (fXg * (1.0 - alpha))
+    fx = ax * alpha
+    fx = fx + (fx * (1.0 - alpha))
 
-    fYg = ay * alpha
-    fYg = fYg + (fYg * (1.0 - alpha))
+    fy = ay * alpha
+    fy = fy + (fy * (1.0 - alpha))
 
-    fZg = az * alpha
-    fZg = fZg + (fZg * (1.0 - alpha))
+    fz = az * alpha
+    fz = fz + (fz * (1.0 - alpha))
 
-    
-    pitch, roll = calc_pitch_roll(fXg, fYg, fZg)
+    pitch, roll = calc_pitch_roll(fx, fy, fz)
 
     if len(kwargs) is 0:
         return int(pitch - start_pitch), int(roll - start_roll)
 
     elif kwargs['start_val'] is True:
-        return(pitch, roll)
+        return pitch, roll
 
 
 def update_position_gauges():
@@ -96,6 +97,9 @@ def update_position_gauges():
 
 
 def mainloop_do(callback, *args, **kwargs):
+
+    """ Screen update loop - adds process to main thread """
+
     def cb(_none):
         callback(*args, **kwargs)
         return False
