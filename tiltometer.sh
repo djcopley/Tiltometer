@@ -1,5 +1,5 @@
 #!/bin/sh
 echo "Application Started"
 cd ~/Desktop/Tiltometer
-python3.5 ~/Desktop/Tiltometer/tiltometer.py
+python3.5 ./tiltometer.py
 echo "Closing Application"
