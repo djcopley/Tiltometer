@@ -9,25 +9,12 @@ import time
 import gi
 import threading
 import math
-from mpu6050 import mpu6050
+from ReadIMU import get_pitch, get_roll
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-# MPU static values
-sensor = mpu6050(0x68)
-alpha = 0.5
-start_pitch = 0
-start_roll = 0
-
-
-def calc_pitch_roll(fx, fy, fz):
-
-    """ Calculates pitch and roll """
-
-    pitch = (math.atan2(fx, math.sqrt(fy * fy + fz * fz)) * 180.0) / math.pi
-    roll = (math.atan2(-fy, fz) * 180.0) / math.pi
-    
-    return pitch, roll
+start_pitch = get_pitch()
+start_roll = get_roll()
 
 
 def level_gyro():
@@ -35,35 +22,15 @@ def level_gyro():
     """ Set base values for gyroscope so change can be calculated """
 
     global start_pitch, start_roll
-    start_pitch, start_roll = get_gyro_pos(start_val=True)
+    start_pitch = get_pitch()
+    start_roll = get_roll()
 
 
-def get_gyro_pos(**kwargs):
+def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
 
-    accel = sensor.get_accel_data()
-    
-    ax = accel['x']
-    ay = accel['y']
-    az = accel['z']
-
-    fx = ax * alpha
-    fx = fx + (fx * (1.0 - alpha))
-
-    fy = ay * alpha
-    fy = fy + (fy * (1.0 - alpha))
-
-    fz = az * alpha
-    fz = fz + (fz * (1.0 - alpha))
-
-    pitch, roll = calc_pitch_roll(fx, fy, fz)
-
-    if len(kwargs) is 0:
-        return int(pitch - start_pitch), int(roll - start_roll)
-
-    elif kwargs['start_val'] is True:
-        return pitch, roll
+    return int(get_pitch() * 100), int(get_roll() * 100)
 
 
 def update_position_gauges():
