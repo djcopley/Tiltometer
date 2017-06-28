@@ -30,7 +30,7 @@ def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
 
-    return int(get_pitch() - start_pitch), int(get_roll() - start_roll)
+    return (get_pitch() - start_pitch), (get_roll() - start_roll)
 
 
 def update_position_gauges():
@@ -47,7 +47,11 @@ def update_position_gauges():
 
     # Update loop
     while Gtk.main_level() != 0:
-        pitch_val, roll_val = get_gyro_pos() * 50
+
+        pitch_val, roll_val = get_gyro_pos()
+        pitch_val = int(pitch_val * 50)
+        roll_val = int(roll_val * 50)
+
         if int(pitch_val) in range(-50, 51):
             mainloop_do(pitch_gauge.set_from_file, "Assets/pitch-gauge/pitch-gauge%d.png" % int(pitch_val))
 
