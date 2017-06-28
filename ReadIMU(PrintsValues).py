@@ -190,22 +190,23 @@ while True:
     # Calculate tilt compensated heading
     tiltCompensatedHeading = 180 * math.atan2(magYcomp, magXcomp) / math.pi
 
-    # if tiltCompensatedHeading < 0:
-    #     tiltCompensatedHeading += 360
-    #
-    # if 1:  # Change to '0' to stop showing the angles from the accelerometer
-    #     print("\033[1;34;40mACCX Angle %5.2f ACCY Angle %5.2f  \033[0m  " % (AccXangle, AccYangle)),
-    #
-    # if 1:  # Change to '0' to stop  showing the angles from the gyro
-    #     print("\033[1;31;40m\tGRYX Angle %5.2f  GYRY Angle %5.2f  GYRZ Angle %5.2f" % (
-    #     gyroXangle, gyroYangle, gyroZangle)),
-    #
-    # if 1:  # Change to '0' to stop  showing the angles from the complementary filter
-    #     print("\033[1;35;40m   \tCFangleX Angle %5.2f \033[1;36;40m  CFangleY Angle %5.2f \33[1;32;40m" %
-    #           (CFangleX, CFangleY)),
-    #
-    # if 1:  # Change to '0' to stop  showing the heading
-    #     print("HEADING  %5.2f \33[1;37;40m tiltCompensatedHeading %5.2f" % (heading, tiltCompensatedHeading))
+    if tiltCompensatedHeading < 0:
+        tiltCompensatedHeading += 360
+
+    if 1:  # Change to '0' to stop showing the angles from the accelerometer
+        print("\033[1;34;40mACCX Angle %5.2f ACCY Angle %5.2f  \033[0m  " % (AccXangle, AccYangle)),
+
+    if 1:  # Change to '0' to stop  showing the angles from the gyro
+        print("\033[1;31;40m\tGRYX Angle %5.2f  GYRY Angle %5.2f  GYRZ Angle %5.2f" % (
+        gyroXangle, gyroYangle, gyroZangle)),
+
+    if 1:  # Change to '0' to stop  showing the angles from the complementary filter
+        print("\033[1;35;40m   \tCFangleX Angle %5.2f \033[1;36;40m  CFangleY Angle %5.2f \33[1;32;40m" %
+              (CFangleX, CFangleY)),
+
+    if 1:  # Change to '0' to stop  showing the heading
+        print("HEADING  %5.2f \33[1;37;40m tiltCompensatedHeading %5.2f" % (heading, tiltCompensatedHeading))
+
     print('\x1b[6;30;42m' + 'Pitch:' + '\x1b[0m', int(pitch * 1000), '\x1b[6;30;42m' + 'Roll:' + '\x1b[0m',
           int(roll * 1000))
 
