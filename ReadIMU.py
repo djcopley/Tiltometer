@@ -206,7 +206,8 @@ while True:
     #
     # if 1:  # Change to '0' to stop  showing the heading
     #     print("HEADING  %5.2f \33[1;37;40m tiltCompensatedHeading %5.2f" % (heading, tiltCompensatedHeading))
-    print('\x1b[6;30;42m' + 'Pitch:' + '\x1b[0m', str(pitch), '\x1b[6;30;42m' + 'Roll:' + '\x1b[0m', roll)
+    print('\x1b[6;30;42m' + 'Pitch:' + '\x1b[0m', int(pitch * 1000), '\x1b[6;30;42m' + 'Roll:' + '\x1b[0m',
+          int(roll * 1000))
 
     # slow program down a bit, makes the output more readable
     time.sleep(0.03)
