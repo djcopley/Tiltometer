@@ -30,7 +30,7 @@ def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
 
-    return int(get_pitch() * 100), int(get_roll() * 100)
+    return int(get_pitch() * 80), int(get_roll() * 80)
 
 
 def update_position_gauges():
