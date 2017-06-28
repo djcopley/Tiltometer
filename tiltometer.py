@@ -13,8 +13,8 @@ from ReadIMU import get_pitch, get_roll
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-start_pitch = None
-start_roll = None
+start_pitch = get_pitch()
+start_roll = get_roll()
 
 
 def level_gyro():
@@ -30,7 +30,7 @@ def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
 
-    return int((get_pitch() * 30) - start_pitch), int((get_roll() * 30) - start_roll)
+    return int((get_pitch() * 50) - start_pitch), int((get_roll() * 50) - start_roll)
 
 
 def update_position_gauges():
@@ -163,9 +163,6 @@ builder.connect_signals(Handler())
 # Main window
 main_window = builder.get_object("main_window")
 main_window.show_all()
-
-# Level Gyro
-level_gyro()
 
 # Main Loop and Threads
 threading.Thread(target=update_position_gauges).start()
