@@ -13,8 +13,8 @@ from ReadIMU import get_pitch, get_roll
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-start_pitch = get_pitch()
-start_roll = get_roll()
+start_pitch = None
+start_roll = None
 
 
 def level_gyro():
