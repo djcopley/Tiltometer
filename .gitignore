@@ -89,3 +89,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/Tiltometer.iml
+.idea/workspace.xml
+.idea/vcs.xml
