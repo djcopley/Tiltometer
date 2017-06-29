@@ -126,9 +126,13 @@ def get_pitch():
 
     acc_x_norm = acc_x / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
-    pitch = math.asin(acc_x_norm)
+    try:
+        pitch = math.asin(acc_x_norm)
+        return pitch
 
-    return pitch
+    except Exception as e:
+        print(e)
+        return 'Out of range'
 
 
 def get_roll():
@@ -141,6 +145,10 @@ def get_roll():
 
     acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
-    roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+    try:
+        roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+        return roll
 
-    return roll
+    except Exception as e:
+        print(e)
+        return 'Out of range'
