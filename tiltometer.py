@@ -40,11 +40,8 @@ def level_gyro():
 def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
-    try:
-        return (get_pitch() - start_pitch), (get_roll() - start_roll)
 
-    except:
-        return get_pitch(), get_roll()
+    return (get_pitch() - start_pitch), (get_roll() - start_roll)
 
 
 def update_position_gauges():
@@ -130,17 +127,8 @@ class Handler:
             # Pitch and roll values
             pitch_val, roll_val = get_gyro_pos()
 
-            if pitch_val is not "Out of range":
-                pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
-
-            else:
-                pitch_val = "Pitch: " + pitch_val
-
-            if roll_val is not "Out of range":
-                roll_val = "Roll: " + str(truncate(roll_val, 3))
-
-            else:
-                roll_val = "Roll: " + roll_val
+            pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
+            roll_val = "Roll: " + str(truncate(roll_val, 3))
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)

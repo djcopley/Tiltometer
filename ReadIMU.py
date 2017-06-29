@@ -132,7 +132,7 @@ def get_pitch():
 
     except Exception as e:
         print(e)
-        return 'Out of range'
+        return 0
 
 
 def get_roll():
@@ -151,4 +151,4 @@ def get_roll():
 
     except Exception as e:
         print(e)
-        return 'Out of range'
+        return 0
