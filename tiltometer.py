@@ -127,8 +127,17 @@ class Handler:
             # Pitch and roll values
             pitch_val, roll_val = get_gyro_pos()
 
-            pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
-            roll_val = "Roll: " + str(truncate(roll_val, 3))
+            if pitch_val is not "Out of range":
+                pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
+
+            else:
+                pitch_val = "Pitch: " + pitch_val
+
+            if roll_val is not "Out of range":
+                roll_val = "Roll: " + str(truncate(roll_val, 3))
+
+            else:
+                roll_val = "Roll: " + roll_val
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)
