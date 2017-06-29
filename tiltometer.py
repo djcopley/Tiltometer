@@ -40,8 +40,11 @@ def level_gyro():
 def get_gyro_pos():
     
     """ Returns pitch and roll from mpu """
+    try:
+        return (get_pitch() - start_pitch), (get_roll() - start_roll)
 
-    return (get_pitch() - start_pitch), (get_roll() - start_roll)
+    except:
+        return get_pitch(), get_roll()
 
 
 def update_position_gauges():
