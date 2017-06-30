@@ -1,5 +1,5 @@
 """
-
+Collections of functions for writing and retrieving data from IMU
 """
 import smbus
 import time
