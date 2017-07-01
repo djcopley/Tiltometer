@@ -2,7 +2,7 @@
 Collections of functions for writing and retrieving data from IMU
 """
 import smbus
-import time
+import logging
 import math
 from LSM9DS0 import *
 
@@ -131,7 +131,7 @@ def get_pitch():
         return pitch
 
     except Exception as e:
-        print(e)
+        logging.debug(e)
         return 0
 
 
@@ -150,5 +150,5 @@ def get_roll():
         return roll
 
     except Exception as e:
-        print(e)
+        logging.debug(e)
         return 0
