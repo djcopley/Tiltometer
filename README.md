@@ -1,4 +1,4 @@
-![Logo](https://github.com/djcopley/Tiltometer/blob/master/Assets/Full%20Detail%20Assets/banner.png)
+![Logo](https://github.com/djcopley/Tiltometer/blob/master/Assets/banner.png)
 
 This program uses input data from an IMU to calculate the pitch and roll of your vehicle and then display it visually 
 
