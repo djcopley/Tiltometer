@@ -1,7 +1,8 @@
 """
 5/24/2017
-This program reads data from an accelerometer and a gyroscope, takes the positional
-data and displays information about the vehicles angles.
+This program reads data from a motion processor, calculates the angular position from the
+data and displays the vehicle information graphically.
+---------------------------------------------------------
 MIT LICENCE
 """
 
