@@ -9,10 +9,6 @@ import math
 
 bus = smbus.SMBus(1)
 
-# Math Constants
-RAD_TO_DEG = 57.29578
-G_GAIN = 0.070  # [deg/s/LSB]  If you change the dps for gyro, you need to update this value accordingly
-
 # LSM9DS0 Locations
 MAG_ADDRESS = 0x1E
 ACC_ADDRESS = 0x1E
