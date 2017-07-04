@@ -40,7 +40,7 @@ For our purposes we need to find the I2C headers. It's the same for both models 
 Pin 3 and 5 are our I2C headers(GPIO  2 and 3). Connect power to 3.3v, SDA to GPIO 2, SCL to GPIO 3 and GND to... well ground of course.
 
 
-After all this, you're ready to go! Just go to your Tiltometer directory and type `./start_tiltometer.sh`. Now you can go 4-Wheeling with some peace of mind.
+After all this, you're ready to go! Just go to your Tiltometer directory and type `./start_tiltometer.sh`. Now you can go off roading with some peace of mind.
 
 ## Resources
 LSM9DS0 [Data Sheet](http://ozzmaker.com/wp-content/uploads/2014/12/LSM9DS0.pdf)
