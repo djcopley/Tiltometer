@@ -38,9 +38,9 @@ You will most likely need to solder the headers to your LSM9DS0 IMU module so st
 
 For our purposes we need to find the I2C headers. It's the same for both models of the Raspberry Pi so if you have a different model, no need to worry.
 Pin 3 and 5 are our I2C headers(GPIO  2 and 3). Connect power to 3.3v, SDA to GPIO 2, SCL to GPIO 3 and GND to... well ground of course.
-After all this, we can get started installing the software.
 
-Now you're ready to run! Just go to your Tiltometer directory and type `./start_tiltometer.sh`.
+
+After all this, you're ready to go! Just go to your Tiltometer directory and type `./start_tiltometer.sh`. Now you can go 4-Wheeling with some peace of mind.
 
 ## Resources
 LSM9DS0 [Data Sheet](http://ozzmaker.com/wp-content/uploads/2014/12/LSM9DS0.pdf)
