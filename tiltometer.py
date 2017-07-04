@@ -174,7 +174,7 @@ class Handler:
 
 # Builder Imports
 builder = Gtk.Builder()
-builder.add_from_file("tiltometer.xml")
+builder.add_from_file("lib/tiltometer.xml")
 builder.connect_signals(Handler())
 
 # Main window

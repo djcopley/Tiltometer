@@ -146,7 +146,7 @@
                 <property name="margin_bottom">5</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
-                <property name="pixbuf">Assets/pitch-gauge/pitch-gauge0.png</property>
+                <property name="pixbuf">assets/pitch-gauge/pitch-gauge0.png</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
@@ -162,7 +162,7 @@
                 <property name="margin_bottom">5</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
-                <property name="pixbuf">Assets/roll-gauge/roll-gauge0.png</property>
+                <property name="pixbuf">assets/roll-gauge/roll-gauge0.png</property>
                 <property name="icon_size">6</property>
               </object>
               <packing>
