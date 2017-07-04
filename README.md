@@ -47,8 +47,8 @@ Finding [Pitch and Roll](http://samselectronicsprojects.blogspot.com/2014/07/get
 Gtk Python [Documentation](https://python-gtk-3-tutorial.readthedocs.io/en/latest/)
 
 ## Contributing
-I would like to keep it as simple as possible so all I will say here is be courteous and use common sense and there won't be any issues. 
-In case there is any discrepancy or you would like more information [here](https://github.com/djcopley/Tiltometer/blob/master/CONTRIBUTING.md).
+I would like to keep this as simple as possible so all I will say here is be courteous and use common sense and there won't be any issues. 
+In case there is any discrepancy or you would like more information, please check out the full set of guidelines [here](https://github.com/djcopley/Tiltometer/blob/master/CONTRIBUTING.md).
 Any contribution is much appreciated 
 
 Thank you! 😁
