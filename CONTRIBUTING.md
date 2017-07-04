@@ -7,7 +7,7 @@ If you wish to contribute, simply fork this repository and make your change! Whe
 
 ## Testing
 
-When testing your changes just be cautious. All I ask is that you make sure your update doesn't break anything.
+When testing your changes just be cautious. All I ask is that you make sure your update doesn't break anything. Beleive it or not it's that simple!
 
 ## Submitting changes
 
