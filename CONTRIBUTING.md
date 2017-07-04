@@ -1,5 +1,3 @@
-# Contributing Guidelines
-
 ## Overview
 Hello and welcome to my project! If you're were looking for more rules and guidelines, you've come to the right place!
 
