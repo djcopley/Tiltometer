@@ -12,7 +12,7 @@ I came to develop this program just mostly out of summer boredom. I drive a Jeep
 projects by affixing a screen and a raspberry-pi in it. Just like that the Jeep Tiltometer was born! I plan on 
 installing a rear view camera and using libraries such as OpenCV and TensorFlow to create some sort of obstacle 
 detection and notification, so stay tuned for that. Feel free to submit a pull request and make changes or improvements 
-as you see fit. I will review and merge valuable changes. Please see the **[CONTRIBUTING](#contributing)**<br> section for details and guidelines. 
+as you see fit. I will review and merge valuable changes. Please see the **[CONTRIBUTING](#contributing)** section for details and guidelines. 
 One thing that could definitely use improvement is the method of rotation I used. Pixbuf and Gdk don't support image 
 rotation or very good scaling so I kind of had to hack it and just sort of animate it. A more efficient solution would 
 be using Cairo or otherwise to rotate the image. Anyway thanks for visiting and enjoy!
