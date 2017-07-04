@@ -1,5 +1,6 @@
 # Contributing Guidelines
 
+## Overview
 Hello and welcome to my project! If you're were looking for more rules and guidelines, you've come to the right place!
 
 If you experience any problems please make sure that your issue is detailed. If you can include exactly what events took place before the failure, that is a bonus.
