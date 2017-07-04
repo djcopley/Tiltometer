@@ -172,11 +172,12 @@ class Handler:
 
 # Builder Imports
 builder = Gtk.Builder()
-builder.add_from_file("tiltometer.glade")
+builder.add_from_file("tiltometer.xml")
 builder.connect_signals(Handler())
 
 # Main window
 main_window = builder.get_object("main_window")
+main_window.fullscreen()
 main_window.show_all()
 
 # Main Loop and Threads
