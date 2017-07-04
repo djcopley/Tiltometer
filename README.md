@@ -26,6 +26,12 @@ This is the list of parts I used and how to configure them:
 * A soldering iron
 * 5V power supply for the Raspberry Pi (duh)
 
+## Installation
+1. Clone repository:  `git clone https://github.com/djcopley/Tiltometer.git`
+2. Enable i2c - in terminal type `sudo raspi-config` then navigate to Interfacing Options > I2C > Yes
+3. Install dependencies: `sudo apt install i2c-tools libi2c-dev python-smbus python3.4` `pip3 install PyGObject`
+4. Make start_tiltometer executable `chmod +x start_tiltometer.sh`
+
 You will most likely need to solder the headers to your LSM9DS0 IMU module so start by doing that. Next we can start wiring the IMU to our Raspberry Pi.
 
 ![Raspi-Pinout](http://www.elektronik-kompendium.de/sites/raspberry-pi/fotos/raspberry-pi-15.jpg)
@@ -34,11 +40,7 @@ For our purposes we need to find the I2C headers. It's the same for both models 
 Pin 3 and 5 are our I2C headers(GPIO  2 and 3). Connect power to 3.3v, SDA to GPIO 2, SCL to GPIO 3 and GND to... well ground of course.
 After all this, we can get started installing the software.
 
-## Installation
-1. Clone repository:  `git clone https://github.com/djcopley/Tiltometer.git`
-2. Enable i2c - in terminal type `sudo raspi-config` then navigate to Interfacing Options > I2C > Yes
-3. Install dependencies: `sudo apt install i2c-tools libi2c-dev python-smbus` `pip3 install PyGObject`
-4. Make start_tiltometer executable `chmod +x start_tiltometer.sh`
+Now you're ready to run! Just go to your Tiltometer directory and type `./start_tiltometer.sh`.
 
 ## Resources
 LSM9DS0 [Data Sheet](http://ozzmaker.com/wp-content/uploads/2014/12/LSM9DS0.pdf)
