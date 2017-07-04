@@ -36,8 +36,9 @@ After all this, we can get started installing the software.
 
 ## Installation
 1. Clone repository:  `git clone https://github.com/djcopley/Tiltometer.git`
-2. Install dependencies: `sudo apt install ` `pip install `
-3. 
+2. Enable i2c - in terminal type `sudo raspi-config` then navigate to Interfacing Options > I2C > Yes
+3. Install dependencies: `sudo apt install i2c-tools libi2c-dev python-smbus` `pip3 install PyGObject`
+4. Make start_tiltometer executable `chmod +x start_tiltometer.sh`
 
 ## Resources
 LSM9DS0 [Data Sheet](http://ozzmaker.com/wp-content/uploads/2014/12/LSM9DS0.pdf)
