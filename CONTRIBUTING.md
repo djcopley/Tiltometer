@@ -10,7 +10,7 @@ When testing your changes just be cautious. All I ask is that you make sure your
 
 ## Submitting changes
 
-Please send a [GitHub Pull Request](https://github.com/djcopley/Tiltometer/pulls) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). Also please make sure all of your commits are atomic (one feature per commit).
+Please send a [GitHub Pull Request](https://github.com/djcopley/Tiltometer/pulls) with a clear list of what you've done (read more about [pull requests](https://help.github.com/articles/about-pull-requests/)). Also please make sure all of your commits are atomic (one feature per commit).
 
 Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:
 
@@ -27,4 +27,4 @@ Readability is key:
   * In-line comments should be preceded by two spaces `some_var = 10  # Example in-line comment`
   * Follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) style guidelines
   
-Thank You :)
+Thank you! 😊
