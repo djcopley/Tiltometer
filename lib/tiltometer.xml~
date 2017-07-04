@@ -224,6 +224,7 @@
   </object>
   <object class="GtkWindow" id="pref_window">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
     <property name="title" translatable="yes">Preferences</property>
     <property name="resizable">False</property>
     <property name="modal">True</property>

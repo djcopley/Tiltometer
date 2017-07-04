@@ -147,9 +147,9 @@ class Handler:
         self.preference_window.hide()
 
     @staticmethod
-    def pholder_toggle(*args):
+    def pref_altitude_toggle(*args):
         
-        """ Place holder method for TBD preference button """
+        """ Place holder method for Altitude """
         
         print("Test")
 
