@@ -12,7 +12,6 @@ bus = smbus.SMBus(1)
 # Math Constants
 RAD_TO_DEG = 57.29578
 G_GAIN = 0.070  # [deg/s/LSB]  If you change the dps for gyro, you need to update this value accordingly
-AA = 0.40  # Complementary filter constant
 
 # LSM9DS0 Locations
 MAG_ADDRESS = 0x1E
@@ -270,10 +269,21 @@ def get_roll():
     acc_y = read_acc_y()
     acc_z = read_acc_z()
 
-    acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
+    alpha = 0.5  # LPF Constant
+
+    x_alpha = acc_x * alpha
+    y_alpha = acc_y * alpha
+    z_alpha = acc_z * alpha
+
+    force_x = x_alpha + (x_alpha * (1.0 - alpha))
+    force_y = x_alpha + (x_alpha * (1.0 - alpha))
+    force_z = x_alpha + (x_alpha * (1.0 - alpha))
+
+    # acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+        # roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+        roll = (math.atan2(-force_y, force_z) * 180) / math.pi
         return roll
 
     except Exception as e:
