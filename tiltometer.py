@@ -6,10 +6,12 @@ data and displays the vehicle information graphically.
 MIT LICENCE
 """
 
+import threading
 import time
 import gi
-import threading
-from ReadIMU import get_pitch, get_roll
+
+from lib.IMU import get_pitch, get_roll
+
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
@@ -66,16 +68,16 @@ def update_position_gauges():
         roll_val = int(roll_val * RAD_TO_DEG)
 
         if int(pitch_val) in range(-50, 51):
-            mainloop_do(pitch_gauge.set_from_file, "Assets/pitch-gauge/pitch-gauge%d.png" % int(pitch_val))
+            mainloop_do(pitch_gauge.set_from_file, "assets/pitch-gauge/pitch-gauge%d.png" % int(pitch_val))
 
         else:
-            mainloop_do(pitch_gauge.set_from_file, "Assets/outside-range/pitch_outside_range_0.png")
+            mainloop_do(pitch_gauge.set_from_file, "assets/outside-range/pitch_outside_range_0.png")
 
         if int(roll_val) in range(-50, 51):
-            mainloop_do(roll_gauge.set_from_file, "Assets/roll-gauge/roll-gauge%d.png" % int(roll_val))
+            mainloop_do(roll_gauge.set_from_file, "assets/roll-gauge/roll-gauge%d.png" % int(roll_val))
 
         else:
-            mainloop_do(roll_gauge.set_from_file, "Assets/outside-range/roll_outside_range_0.png")
+            mainloop_do(roll_gauge.set_from_file, "assets/outside-range/roll_outside_range_0.png")
 
         time.sleep(.05)
 
