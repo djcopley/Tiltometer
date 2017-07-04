@@ -49,7 +49,7 @@ Gtk Python [Documentation](https://python-gtk-3-tutorial.readthedocs.io/en/lates
 ## Contributing
 I would like to keep this as simple as possible so all I will say here is be courteous and use common sense and there won't be any issues. 
 In case there is any discrepancy or you would like more information, please check out the full set of guidelines [here](https://github.com/djcopley/Tiltometer/blob/master/CONTRIBUTING.md).
-Any contribution is much appreciated!
+Any contribution is much appreciated! 
 
 Thank you! 😁
 
