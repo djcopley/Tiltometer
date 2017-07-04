@@ -9,9 +9,7 @@ MIT LICENCE
 import threading
 import time
 import gi
-
 from lib.IMU import get_pitch, get_roll
-
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
