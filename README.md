@@ -21,7 +21,7 @@ be using Cairo or otherwise to rotate the image. Anyway thanks for visiting and 
 ## Requirements
 This is the list of parts I used and how to configure them:
 * Raspberry Pi Model 3
-* LSM9DS0 IMU
+* [LSM9DS0 IMU](http://amzn.to/2tsNNs8)
 * 7" Raspberry Pi [Touch Screen](http://amzn.to/2tDvX83)
 * A soldering iron
 * 5V power supply for the Raspberry Pi (duh)
