@@ -17,8 +17,8 @@ RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
 
 # Initialize AccelData class
 accel_data = AccelData()
-get_pitch = accel_data.get_pitch()
-get_roll = accel_data.get_roll()
+get_pitch = accel_data.get_pitch
+get_roll = accel_data.get_roll
 
 # Get starting values for pitch and roll to measure change
 start_pitch = get_pitch()
