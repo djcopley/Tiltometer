@@ -251,7 +251,7 @@ def get_pitch():
     acc_x_norm = acc_x / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        for i in range(100):
+        for i in range(1000):
             pitch_avg.append(math.asin(acc_x_norm))
 
         pitch_avg = sum(pitch_avg) / len(pitch_avg)
@@ -275,7 +275,7 @@ def get_roll():
     acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        for i in range(100):
+        for i in range(1000):
             roll_avg.append(math.asin(acc_y_norm))
 
         roll_avg = sum(roll_avg) / len(roll_avg)
