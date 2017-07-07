@@ -9,16 +9,16 @@ MIT LICENCE
 import threading
 import time
 import gi
-from lib.IMU import calc_roll, calc_pitch
+from lib.IMU import AccelData
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
 RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
 
 # Initialize AccelData class
-# accel_data = AccelData()
-get_pitch = calc_pitch
-get_roll = calc_roll
+accel_data = AccelData()
+get_pitch = accel_data.get_pitch
+get_roll = accel_data.get_roll
 
 # Get starting values for pitch and roll to measure change
 start_pitch = get_pitch()
