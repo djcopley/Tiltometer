@@ -242,8 +242,6 @@ def get_pitch():
 
     """ Return Pitch Value"""
 
-    pitch_avg = []
-
     acc_x = read_acc_x()
     acc_y = read_acc_y()
     acc_z = read_acc_z()
@@ -251,11 +249,8 @@ def get_pitch():
     acc_x_norm = acc_x / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        for i in range(1000):
-            pitch_avg.append(math.asin(acc_x_norm))
-
-        pitch_avg = sum(pitch_avg) / len(pitch_avg)
-        return pitch_avg
+        pitch = math.asin(acc_x_norm)
+        return pitch
 
     except Exception as e:
         logging.debug(e)
@@ -266,8 +261,6 @@ def get_roll():
 
     """ Returns Roll Value """
 
-    roll_avg = []
-
     acc_x = read_acc_x()
     acc_y = read_acc_y()
     acc_z = read_acc_z()
@@ -275,11 +268,8 @@ def get_roll():
     acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        for i in range(1000):
-            roll_avg.append(math.asin(acc_y_norm))
-
-        roll_avg = sum(roll_avg) / len(roll_avg)
-        return roll_avg
+        roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+        return roll
 
     except Exception as e:
         logging.debug(e)
