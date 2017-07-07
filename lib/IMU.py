@@ -238,9 +238,13 @@ write_gyro(CTRL_REG1_G, 0b00001111)  # Normal power mode, all axes enabled
 write_gyro(CTRL_REG4_G, 0b00110000)  # Continuous update, 2000 dps full scale
 
 
-def get_pitch():
+def average_list(input_list):
+    return sum(input_list) / len(input_list)
 
-    """ Return Pitch Value"""
+
+def calc_pitch():
+
+    """ Calculates pitch value"""
 
     acc_x = read_acc_x()
     acc_y = read_acc_y()
@@ -254,12 +258,12 @@ def get_pitch():
 
     except Exception as e:
         logging.debug(e)
-        return 0
+    return 0
 
 
-def get_roll():
+def calc_roll():
 
-    """ Returns Roll Value """
+    """ Calculates roll value """
 
     acc_x = read_acc_x()
     acc_y = read_acc_y()
@@ -268,9 +272,46 @@ def get_roll():
     acc_y_norm = acc_y / math.sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z)
 
     try:
-        roll = -math.asin(acc_y_norm / math.cos(get_pitch()))
+        roll = -math.asin(acc_y_norm / math.cos(calc_pitch()))
         return roll
 
     except Exception as e:
         logging.debug(e)
         return 0
+
+
+class AccelData:
+    """
+    Class AccelData allows for pitch and roll data to be averaged to reduce inconsistency
+    """
+
+    pitch_avg = []
+    roll_avg = []
+
+    def __init__(self):
+
+        """ Initializes class - adds 1000 samples to pitch_avg and roll_avg """
+
+        for i in range(1000):
+            self.pitch_avg.append(calc_pitch())
+            self.roll_avg.append(calc_pitch())
+
+    def get_pitch(self):
+
+        """ Returns pitch value """
+
+        del self.pitch_avg[0]
+        while len(self.pitch_avg) < 1000:
+            self.pitch_avg.append(calc_pitch())
+
+        return average_list(self.pitch_avg)
+
+    def get_roll(self):
+
+        """ Returns roll value """
+
+        del self.roll_avg[0]
+        while len(self.roll_avg) < 1000:
+            self.roll_avg.append(calc_roll())
+
+        return average_list(self.roll_avg)
