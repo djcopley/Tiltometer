@@ -83,7 +83,7 @@ def update_position_gauges():
         else:
             mainloop_do(roll_gauge.set_from_file, "assets/outside-range/roll_outside_range_0.png")
 
-        # time.sleep(.05)
+        time.sleep(.01)
 
 
 def mainloop_do(callback, *args, **kwargs):
@@ -142,7 +142,7 @@ class Handler:
             mainloop_do(self.pitch_label.set_text, pitch_val)
             mainloop_do(self.roll_label.set_text, roll_val)
 
-            # time.sleep(.05)
+            time.sleep(.01)
 
         self.pitch_label.set_text("Pitch")
         self.roll_label.set_text("Roll")
