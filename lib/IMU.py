@@ -293,8 +293,11 @@ class AccelData:
         """ Initializes class - adds 1000 samples to pitch_avg and roll_avg """
 
         for i in range(1000):
+            print(i)
             self.pitch_avg.append(calc_pitch())
             self.roll_avg.append(calc_pitch())
+
+        print('finished')
 
     def get_pitch(self):
 
