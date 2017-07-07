@@ -288,11 +288,13 @@ class AccelData:
     pitch_avg = []
     roll_avg = []
 
+    sample_size = 50
+
     def __init__(self):
 
         """ Initializes class - adds 1000 samples to pitch_avg and roll_avg """
 
-        for i in range(1000):
+        for i in range(self.sample_size):
             print(i)
             self.pitch_avg.append(calc_pitch())
             self.roll_avg.append(calc_pitch())
@@ -304,7 +306,7 @@ class AccelData:
         """ Returns pitch value """
 
         del self.pitch_avg[0]
-        while len(self.pitch_avg) < 1000:
+        while len(self.pitch_avg) < self.sample_size:
             self.pitch_avg.append(calc_pitch())
 
         return average_list(self.pitch_avg)
@@ -314,7 +316,7 @@ class AccelData:
         """ Returns roll value """
 
         del self.roll_avg[0]
-        while len(self.roll_avg) < 1000:
+        while len(self.roll_avg) < self.sample_size:
             self.roll_avg.append(calc_roll())
 
         return average_list(self.roll_avg)
