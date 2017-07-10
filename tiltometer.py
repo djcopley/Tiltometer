@@ -9,7 +9,7 @@ MIT LICENCE
 import threading
 import time
 import gi
-from lib.IMU import AccelData, calc_pitch, calc_roll
+from lib.IMU import AccelData, calc_pitch, calc_roll, RAD_TO_DEG
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
@@ -66,8 +66,8 @@ def update_position_gauges():
     while Gtk.main_level() != 0:
 
         pitch_val, roll_val = get_gyro_pos()
-        pitch_val = int(pitch_val)
-        roll_val = int(roll_val)
+        pitch_val = int(pitch_val * RAD_TO_DEG)
+        roll_val = int(roll_val * RAD_TO_DEG)
 
         if int(pitch_val) in range(-50, 51):
             mainloop_do(pitch_gauge.set_from_file, "assets/pitch-gauge/pitch-gauge%d.png" % int(pitch_val))

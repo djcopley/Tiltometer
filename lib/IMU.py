@@ -255,7 +255,7 @@ def calc_pitch():
 
     try:
         pitch = math.asin(acc_x_norm)
-        return pitch * RAD_TO_DEG
+        return pitch
 
     except Exception as e:
         logging.debug(e)
@@ -274,7 +274,7 @@ def calc_roll():
 
     try:
         roll = -math.asin(acc_y_norm / math.cos(calc_pitch()))
-        return roll * RAD_TO_DEG
+        return roll
 
     except Exception as e:
         logging.debug(e)
