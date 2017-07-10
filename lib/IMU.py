@@ -6,6 +6,7 @@ MIT LICENSE
 import smbus
 import logging
 import math
+import numpy as np
 
 bus = smbus.SMBus(1)
 
@@ -238,10 +239,6 @@ write_gyro(CTRL_REG1_G, 0b00001111)  # Normal power mode, all axes enabled
 write_gyro(CTRL_REG4_G, 0b00110000)  # Continuous update, 2000 dps full scale
 
 
-def average_list(input_list):
-    return sum(input_list) / len(input_list)
-
-
 def calc_pitch():
 
     """ Calculates pitch value"""
@@ -306,7 +303,7 @@ class AccelData:
         while len(self.pitch_avg) < self.sample_size:
             self.pitch_avg.append(calc_pitch())
 
-        return average_list(self.pitch_avg)
+        return np.mean(self.pitch_avg)
 
     def get_roll(self):
 
@@ -316,4 +313,4 @@ class AccelData:
         while len(self.roll_avg) < self.sample_size:
             self.roll_avg.append(calc_roll())
 
-        return average_list(self.roll_avg)
+        return np.mean(self.roll_avg)
