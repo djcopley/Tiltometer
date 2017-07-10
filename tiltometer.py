@@ -180,6 +180,8 @@ builder.connect_signals(Handler())
 main_window = builder.get_object("main_window")
 main_window.fullscreen()
 main_window.show_all()
+
+# Create hidden or invisible cursor
 invisible_cursor = Gdk.Cursor.new(Gdk.CursorType.BLANK_CURSOR)
 main_window.get_window().set_cursor(invisible_cursor)
 
