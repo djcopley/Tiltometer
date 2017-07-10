@@ -14,7 +14,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
 RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
-REFRESH_RATE = .05
+REFRESH_RATE = .035
 
 # Initialize AccelData class
 accel_data = AccelData()
