@@ -8,6 +8,7 @@ import logging
 import math
 
 bus = smbus.SMBus(1)
+RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
 
 # LSM9DS0 Locations
 MAG_ADDRESS = 0x1E
@@ -254,7 +255,7 @@ def calc_pitch():
 
     try:
         pitch = math.asin(acc_x_norm)
-        return pitch
+        return pitch * RAD_TO_DEG
 
     except Exception as e:
         logging.debug(e)
@@ -273,7 +274,7 @@ def calc_roll():
 
     try:
         roll = -math.asin(acc_y_norm / math.cos(calc_pitch()))
-        return roll
+        return roll * RAD_TO_DEG
 
     except Exception as e:
         logging.debug(e)
