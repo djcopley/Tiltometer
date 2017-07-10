@@ -8,7 +8,6 @@ import logging
 import math
 
 bus = smbus.SMBus(1)
-RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
 
 # LSM9DS0 Locations
 MAG_ADDRESS = 0x1E
@@ -289,7 +288,7 @@ class AccelData:
     pitch_avg = []
     roll_avg = []
 
-    sample_size = 30
+    sample_size = 10
 
     def __init__(self):
 

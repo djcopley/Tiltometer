@@ -9,9 +9,11 @@ MIT LICENCE
 import threading
 import time
 import gi
-from lib.IMU import AccelData, calc_pitch, calc_roll, RAD_TO_DEG
+from lib.IMU import AccelData
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
+
+RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
 
 # Initialize AccelData class
 accel_data = AccelData()
@@ -19,8 +21,8 @@ get_pitch = accel_data.get_pitch
 get_roll = accel_data.get_roll
 
 # Get starting values for pitch and roll to measure change
-start_pitch = calc_pitch()
-start_roll = calc_roll()
+start_pitch = get_pitch()
+start_roll = get_roll()
 
 
 def truncate(f, n):
@@ -81,7 +83,7 @@ def update_position_gauges():
         else:
             mainloop_do(roll_gauge.set_from_file, "assets/outside-range/roll_outside_range_0.png")
 
-        time.sleep(.05)
+        time.sleep(.03)
 
 
 def mainloop_do(callback, *args, **kwargs):
@@ -133,14 +135,14 @@ class Handler:
             # Pitch and roll values
             pitch_val, roll_val = get_gyro_pos()
 
-            pitch_val = "Pitch: " + str(pitch_val + '°')
-            roll_val = "Roll: " + str(roll_val + '°')
+            pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
+            roll_val = "Roll: " + str(truncate(roll_val, 3))
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)
             mainloop_do(self.roll_label.set_text, roll_val)
 
-            time.sleep(.05)
+            time.sleep(.03)
 
         self.pitch_label.set_text("Pitch")
         self.roll_label.set_text("Roll")
