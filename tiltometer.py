@@ -135,8 +135,8 @@ class Handler:
             # Pitch and roll values
             pitch_val, roll_val = get_gyro_pos()
 
-            pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
-            roll_val = "Roll: " + str(truncate(roll_val, 3))
+            pitch_val = "Pitch: {0}°".format(str(truncate(pitch_val, 3)))
+            roll_val = "Roll: {0}°".format(str(truncate(roll_val, 3)))
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)
