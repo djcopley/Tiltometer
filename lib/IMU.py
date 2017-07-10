@@ -289,7 +289,7 @@ class AccelData:
     pitch_avg = []
     roll_avg = []
 
-    variance_threshold = 10  # +- 10°
+    variance_threshold = .2
 
     sample_size = 30
 
@@ -307,8 +307,7 @@ class AccelData:
 
         del self.pitch_avg[0]
         while len(self.pitch_avg) < self.sample_size:
-            if (abs(calc_pitch()) - abs(average_list(self.pitch_avg))) < self.variance_threshold:
-                self.pitch_avg.append(calc_pitch())
+            self.pitch_avg.append(calc_pitch())
 
         return average_list(self.pitch_avg)
 
@@ -318,7 +317,6 @@ class AccelData:
 
         del self.roll_avg[0]
         while len(self.roll_avg) < self.sample_size:
-            if (abs(calc_roll()) - abs(average_list(self.roll_avg))) < self.variance_threshold:
-                self.roll_avg.append(calc_roll())
+            self.roll_avg.append(calc_roll())
 
         return average_list(self.roll_avg)
