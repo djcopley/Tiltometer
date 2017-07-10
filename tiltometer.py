@@ -14,6 +14,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
 RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
+REFRESH_RATE = .05
 
 # Initialize AccelData class
 accel_data = AccelData()
@@ -72,7 +73,7 @@ def update_position_gauges():
         else:
             mainloop_do(roll_gauge.set_from_file, "assets/outside-range/roll_outside_range_0.png")
 
-        time.sleep(.025)
+        time.sleep(REFRESH_RATE)
 
 
 def mainloop_do(callback, *args, **kwargs):
@@ -117,7 +118,7 @@ class Handler:
 
         # Wait for gtk main loop
         while Gtk.main_level() == 0:
-            time.sleep(.025)
+            time.sleep(REFRESH_RATE)
 
         while self.pitch_roll_toggle.get_active() and Gtk.main_level() != 0:
 
