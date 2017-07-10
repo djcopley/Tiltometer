@@ -25,17 +25,6 @@ start_pitch = get_pitch()
 start_roll = get_roll()
 
 
-def truncate(f, n):
-
-    """ Truncates a float f to n decimal places without rounding """
-
-    s = '{}'.format(f)
-    if 'e' in s or 'E' in s:
-        return '{0:.{1}f}'.format(f, n)
-    i, p, d = s.partition('.')
-    return '.'.join([i, (d+'0'*n)[:n]])
-
-
 def level_gyro():
 
     """ Set base values for gyroscope so change can be calculated """
@@ -138,8 +127,8 @@ class Handler:
             pitch_val = pitch_val * RAD_TO_DEG
             roll_val = roll_val * RAD_TO_DEG
 
-            pitch_val = "Pitch: {0}°".format(str(truncate(pitch_val, 3)))
-            roll_val = "Roll: {0}°".format(str(truncate(roll_val, 3)))
+            pitch_val = "Pitch: {0}°".format(int(pitch_val))
+            roll_val = "Roll: {0}°".format(int(roll_val))
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)
