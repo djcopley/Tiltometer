@@ -180,7 +180,7 @@ builder.connect_signals(Handler())
 main_window = builder.get_object("main_window")
 main_window.fullscreen()
 invisible_cursor = Gdk.Cursor.new(Gdk.CursorType.BLANK_CURSOR)
-main_window.set_cursor(invisible_cursor)
+main_window.get_window().set_cursor(invisible_cursor)
 main_window.show_all()
 
 # Main Loop and Threads
