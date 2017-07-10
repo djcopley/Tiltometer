@@ -9,7 +9,7 @@ MIT LICENCE
 import threading
 import time
 import gi
-from lib.IMU import AccelData
+from lib.IMU import AccelData, calc_pitch, calc_roll
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
@@ -19,8 +19,8 @@ get_pitch = accel_data.get_pitch
 get_roll = accel_data.get_roll
 
 # Get starting values for pitch and roll to measure change
-start_pitch = get_pitch()
-start_roll = get_roll()
+start_pitch = calc_pitch()
+start_roll = calc_roll()
 
 
 def truncate(f, n):
