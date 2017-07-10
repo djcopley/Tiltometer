@@ -289,8 +289,6 @@ class AccelData:
     pitch_avg = []
     roll_avg = []
 
-    variance_threshold = .2
-
     sample_size = 30
 
     def __init__(self):
