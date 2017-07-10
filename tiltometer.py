@@ -13,8 +13,6 @@ from lib.IMU import AccelData
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-RAD_TO_DEG = 57.29578  # Math constant for RADIAN -> DEGREE conversion
-
 # Initialize AccelData class
 accel_data = AccelData()
 get_pitch = accel_data.get_pitch
@@ -68,8 +66,8 @@ def update_position_gauges():
     while Gtk.main_level() != 0:
 
         pitch_val, roll_val = get_gyro_pos()
-        pitch_val = int(pitch_val * RAD_TO_DEG)
-        roll_val = int(roll_val * RAD_TO_DEG)
+        pitch_val = int(pitch_val)
+        roll_val = int(roll_val)
 
         if int(pitch_val) in range(-50, 51):
             mainloop_do(pitch_gauge.set_from_file, "assets/pitch-gauge/pitch-gauge%d.png" % int(pitch_val))
@@ -135,8 +133,8 @@ class Handler:
             # Pitch and roll values
             pitch_val, roll_val = get_gyro_pos()
 
-            pitch_val = "Pitch: " + str(truncate(pitch_val, 3))
-            roll_val = "Roll: " + str(truncate(roll_val, 3))
+            pitch_val = "Pitch: " + str(truncate(pitch_val + '°', 1))
+            roll_val = "Roll: " + str(truncate(roll_val + '°', 1))
 
             # Update screen
             mainloop_do(self.pitch_label.set_text, pitch_val)
