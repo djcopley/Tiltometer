@@ -72,7 +72,7 @@ def update_position_gauges():
         else:
             mainloop_do(roll_gauge.set_from_file, "assets/outside-range/roll_outside_range_0.png")
 
-        time.sleep(.03)
+        time.sleep(.025)
 
 
 def mainloop_do(callback, *args, **kwargs):
@@ -117,7 +117,7 @@ class Handler:
 
         # Wait for gtk main loop
         while Gtk.main_level() == 0:
-            time.sleep(.01)
+            time.sleep(.025)
 
         while self.pitch_roll_toggle.get_active() and Gtk.main_level() != 0:
 
@@ -134,7 +134,7 @@ class Handler:
             mainloop_do(self.pitch_label.set_text, pitch_val)
             mainloop_do(self.roll_label.set_text, roll_val)
 
-            time.sleep(.03)
+            time.sleep(.2)
 
         self.pitch_label.set_text("Pitch")
         self.roll_label.set_text("Roll")
