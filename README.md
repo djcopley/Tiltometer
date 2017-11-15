@@ -1,5 +1,5 @@
 <p align="center">
-  <img /https://github.com/djcopley/Tiltometer/blob/master/assets/banner.png>
+  <img https://github.com/djcopley/Tiltometer/blob/master/assets/banner.png/>
 </p>
 
 ### Table of Contents
