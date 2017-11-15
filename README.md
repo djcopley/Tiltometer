@@ -1,6 +1,4 @@
-<p align="center">
-  <img https://github.com/djcopley/Tiltometer/blob/master/assets/banner.png/>
-</p>
+![LOGO](https://github.com/djcopley/Tiltometer/blob/master/assets/banner.png)
 
 ### Table of Contents
 **[Introduction](#introduction)**<br>
