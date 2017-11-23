@@ -24,7 +24,7 @@ This is the list of parts I used and how to configure them:
 * LSM9DS0 [IMU](http://amzn.to/2tsNNs8)
 * 7" Raspberry Pi [Touch Screen](http://amzn.to/2tDvX83)
 * A soldering iron
-* 5V power supply for the Raspberry Pi (duh)
+* 5V power supply for the Raspberry Pi
 
 ## Installation
 1. Clone repository:  `git clone https://github.com/djcopley/Tiltometer.git`
