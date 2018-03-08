@@ -171,6 +171,7 @@ class Handler:
     def quit_program(*args):
         Gtk.main_quit()
 
+
 # Builder Imports
 builder = Gtk.Builder()
 builder.add_from_file("lib/tiltometer.xml")
