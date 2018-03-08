@@ -9,14 +9,11 @@
 **[Licensing](#licensing)**<br>
 
 ## Introduction
-I came to develop this program just mostly out of summer boredom. I drive a Jeep and I thought I could do some cool 
-projects by affixing a screen and a raspberry-pi in it. Just like that the Jeep Tiltometer was born! I plan on 
-installing a rear view camera and using libraries such as OpenCV and TensorFlow to create some sort of obstacle 
-detection and notification, so stay tuned for that. Feel free to submit a pull request and make changes or improvements 
+I came to develop this program just mostly out of summer boredom. I drive a Jeep and thought it would be cool to install
+a touch screen coupled with a raspberry pi inside. I plan on affixing a rear view camera to my tailgate, and using some  
+open source libraries like OpenCV to achieve some obstacle recognition in the future. Feel free to submit a pull request and make changes or improvements 
 as you see fit. I will review and merge valuable changes. Please see the section on **[contributing](#contributing)** for more details and guidelines. 
-One thing that could definitely use improvement is the method of rotation I used. Pixbuf and Gdk don't support image 
-rotation or very good scaling so I kind of had to hack it and just sort of animate it. A more efficient solution would 
-be using Cairo or otherwise to rotate the image. Anyway thanks for visiting and enjoy!
+Anyways, thanks for visiting and enjoy!
 
 ## Requirements
 This is the list of parts I used and how to configure them:
@@ -40,7 +37,7 @@ For our purposes we need to find the I2C headers. It's the same for both models 
 Pin 3 and 5 are our I2C headers(GPIO  2 and 3). Connect power to 3.3v, SDA to GPIO 2, SCL to GPIO 3 and GND to... well ground of course.
 
 
-After all this, you're ready to go! Just go to your Tiltometer directory and type `./start_tiltometer.sh`. Now you can go off roading with some peace of mind.
+After all this, you're ready to go! Just go to your Tiltometer directory and type `./start_tiltometer.sh`.
 
 ## Resources
 LSM9DS0 [Data Sheet](http://ozzmaker.com/wp-content/uploads/2014/12/LSM9DS0.pdf)
