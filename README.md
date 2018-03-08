@@ -9,7 +9,7 @@
 **[Licensing](#licensing)**<br>
 
 ## Introduction
-I came to develop this program just mostly out of summer boredom. I drive a Jeep and thought it would be cool to install
+I came to develop this program mostly out of summer boredom. I drive a Jeep and thought it would be cool to install
 a touch screen coupled with a raspberry pi inside. I plan on affixing a rear view camera to my tailgate, and using some  
 open source libraries like OpenCV to achieve some obstacle recognition in the future. Feel free to submit a pull request and make changes or improvements 
 as you see fit. I will review and merge valuable changes. Please see the section on **[contributing](#contributing)** for more details and guidelines. 
