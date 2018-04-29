@@ -1,4 +1,4 @@
 #!/bin/sh
 echo "Application Started"
-python3.4 ./tiltometer.py
+python3 ./tiltometer.py
 echo "Closing Application"
