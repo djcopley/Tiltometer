@@ -8,6 +8,8 @@
 **[Contributing](#contributing)**<br>
 **[Licensing](#licensing)**<br>
 
+***Foreword:* I wrote this program in High School. Enough said. Use at your own risk. Goodluck and enjoy.** 
+
 ## Introduction
 I came to develop this program mostly out of summer boredom. I drive a Jeep and thought it would be cool to install
 a touch screen coupled with a raspberry pi inside. I plan on affixing a rear view camera to my tailgate, and using some  
